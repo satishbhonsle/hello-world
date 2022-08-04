@@ -3,7 +3,7 @@ agent any;
   stages{
     stage('build'){
       steps{
-      echo 'devlopment stage' 
+        echo 'devlopment stage' 
       }
     }
   }
