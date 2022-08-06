@@ -4,7 +4,6 @@ pipeline{
     stage('Git Checkout'){
       steps{
         echo ' Git checkout'
-        sh ' tree .'
       }
     }
     stage('Build repo'){
