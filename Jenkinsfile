@@ -1,14 +1,14 @@
 pipeline{
   agent any
   stages{
-    stage('build'){
+    stage('Git Checkout'){
       steps{
-        echo 'devlopment stage testing' 
+       sh 'git checkout https://github.com/satishbhonsle/hello-world'
       }
     }
-    stage('Test'){
+    stage('Build repo'){
       steps{
-        echo 'Test stage testing' 
+        sh 'docker build -t tomcatimage:v1 .' 
       }
     }    
   }
