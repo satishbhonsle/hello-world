@@ -3,7 +3,8 @@ pipeline{
   stages{
     stage('Git Checkout'){
       steps{
-        sh 'git checkout -b ${GIT_BRANCH} https://github.com/satishbhonsle/hello-world.git'
+        echo ' Git checkout'
+        sh ' tree .'
       }
     }
     stage('Build repo'){
