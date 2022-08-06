@@ -8,7 +8,7 @@ pipeline{
     }
     stage('Build repo'){
       steps{
-        sh 'docker build -t tomcatimage:v1 .' 
+        sh 'docker build -t tomcatimage:v2 .' 
       }
     }    
   }
