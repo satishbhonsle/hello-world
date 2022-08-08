@@ -13,7 +13,7 @@ pipeline{
     stage('Build repo'){
       steps{
         withCredentials([sshUserPrivateKey(credentialsId: 'ansadmin', keyFileVariable: '')]) {
-          sshcommand remote: remote, command: 'touch /temp/testMe.txt'       
+          sshcommand : 'touch /temp/testMe.txt'       
         }
       }
     }    
