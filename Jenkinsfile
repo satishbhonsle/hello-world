@@ -11,9 +11,9 @@ pipeline{
       }
     }
     stage('Build repo'){
-      steps{
-        withCredentials([sshUserPrivateKey(credentialsId: 'ansadmin', keyFileVariable: '')]) {
-          sh 'touch /tmp/testMe.txt'       
+      steps {
+          sshagent(credentials: ['ansible-server']) {
+           sh 'touch /tmp/testMe.txt'       
         }
       }
     }    
