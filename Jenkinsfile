@@ -1,6 +1,6 @@
 pipeline{
   def ANSIBLE_NODE="54.202.249.221"
-  agent $ANSIBLE_NODE
+  agent any
   stages{
     stage('Git Checkout'){
       steps{
@@ -10,7 +10,12 @@ pipeline{
     }
     stage('Build repo'){
       steps{
-        docker.build(tomcatimage:v2) 
+        def remote = [:]
+        remote.host = ansible-server
+        remote.name = 'ansadmin'
+        withCredentials([sshUserPrivateKey(credentialsId: 'ansadmin', keyFileVariable: '')]) {
+          sshcommand remote: remote, command: 'touch /temp/testMe.txt'       
+        }
       }
     }    
   }
