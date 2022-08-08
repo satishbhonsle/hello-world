@@ -1,7 +1,7 @@
 pipeline{
-  def remote = [:]
-  remote.host = '54.202.249.221'
-  remote.name = 'ansadmin'  
+//   def remote = [:]
+//   remote.host = '54.202.249.221'
+//   remote.name = 'ansadmin'  
   agent any
   stages{
     stage('Git Checkout'){
