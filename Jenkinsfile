@@ -10,7 +10,7 @@ pipeline{
     stage('Build repo'){
       steps{
         def remote = [:]
-        remote.host = 'ansible-server'
+        remote.host = '54.202.249.221'
         remote.name = 'ansadmin'
         withCredentials([sshUserPrivateKey(credentialsId: 'ansadmin', keyFileVariable: '')]) {
           sshcommand remote: remote, command: 'touch /temp/testMe.txt'       
