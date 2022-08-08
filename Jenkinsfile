@@ -1,14 +1,16 @@
 pipeline{
-  agent any
+  def ANSIBLE_NODE="54.202.249.221"
+  agent $ANSIBLE_NODE
   stages{
     stage('Git Checkout'){
       steps{
         echo ' Git checkout'
+        checkout scm
       }
     }
     stage('Build repo'){
       steps{
-        sh 'docker build -t tomcatimage:v2 .' 
+        docker.build(tomcatimage:v2) 
       }
     }    
   }
