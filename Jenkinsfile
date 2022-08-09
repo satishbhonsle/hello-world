@@ -1,5 +1,4 @@
-node{
-  stages{
-      echo 'Build stage'
+node {
+  scm {
   }
 }
