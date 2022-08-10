@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Build') {
       steps{
-        sh 'echo $HOST_NAME'
+        git branch: $GIT_BRANCH, url: 'https://github.com/satishbhonsle/hello-world.git'
       }
     }
   }
