@@ -6,7 +6,5 @@ pipeline{
     stage('Build'){
       sh 'echo ${HOSTNAME}'
     }
+  }
 }
-  
-  
-  
