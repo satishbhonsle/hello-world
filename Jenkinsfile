@@ -10,7 +10,7 @@ pipeline {
         checkout(
                 [
                     $class: 'GitSCM',
-                    branches: [[name: "*/PR-*"]],
+                    branches: [[name: "$GIT_BRANCH"]],
                     doGenerateSubmoduleConfigurations: false,
                     submoduleCfg: [],
                     userRemoteConfigs: [[credentialsId: "",
