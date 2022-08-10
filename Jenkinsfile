@@ -5,7 +5,7 @@ pipeline {
     HOST_NAME= '54.202.249.221'    
   }
   stages {
-    stage('Build') {
+    stage('SCM Checkout') {
       steps{
         checkout(
                 [
@@ -17,6 +17,11 @@ pipeline {
                     url: "$GIT_URL"]]
                 ]
          )
+      }
+    }
+    stage('Dokcer build') {
+      steps{
+        sh 'docker build -t tomcatimage:v1 .'
       }
     }
   }
