@@ -1,5 +1,6 @@
 def skipRemainingStages = false
 pipeline {
+  agent any
   environment {
     HOST_NAME= '54.202.249.221'    
   }
