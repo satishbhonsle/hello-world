@@ -7,7 +7,16 @@ pipeline {
   stages {
     stage('Build') {
       steps{
-        git branch: $GIT_BRANCH, url: 'https://github.com/satishbhonsle/hello-world.git'
+        checkout(
+                [
+                    $class: 'GitSCM',
+                    branches: [[name: "*/PR-*"]],
+                    doGenerateSubmoduleConfigurations: false,
+                    submoduleCfg: [],
+                    userRemoteConfigs: [[credentialsId: "",
+                    url: "$GIT_URL"]]
+                ]
+         )
       }
     }
   }
