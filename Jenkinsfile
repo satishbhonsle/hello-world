@@ -1,5 +1,5 @@
-pipeline{
-  environment{
+pipeline {
+  environment {
     HOST_NAME = '54.202.249.221'    
   }
   stages {
